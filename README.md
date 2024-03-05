@@ -7,7 +7,9 @@
 
 ## Project Overview
 
-Welcome to my Convolutional Neural Networks (CNN) project. In this project, I have built a pipeline that can be used within a web app to process real-world, user-supplied images.  Given an image of a dog, my algorithm will identify an estimate of the canine’s breed.  If supplied an image of a human, the code will identify the resembling dog breed.
+ Convolutional Neural Networks (CNN) Udacity Data Scientist project. This Project has 2 parts the first is a dog breed classification and the second is a flask web application.
+ In the dog breed classification part, a few models were built and tested to try and classify dogs from images to one of 133 dog breeds.
+ The Web Application allows the user to upload an image and it checks if it's a dog and returns it's breed, if it's a human and returns the breed the human resembles.
 
 ![Sample Output][image1]
 
@@ -24,6 +26,10 @@ And the following libraries need to be installed
 
 (4) matplotlib
 
+(5) numpy
+
+(6) glob
+
 If any of them are unavailable, use pip install (library_name)
 
 ## Motivation 
@@ -35,12 +41,41 @@ This Repository contains several files and folders.
 
 The run.py file is a web app program that predicts a dog breed from an image supplied by the user. static and templates folders are needed to run this file.
 
-The dog_app.ipynb is a notbook that was used to explore the data and train some models. It saves the best model for each approach in the saved_models folder.
+The dog_app.ipynb is a notebook that was used to explore the data and train some models. It saves the best model for each approach in the saved_models folder.
 
 The extract_bottleneck_features.py contains some helper functions to extract bottleneck features.
 
+## Analysis 
+In this project, I built a InceptionV3 model from a pre-trained model. I was able to achieve an accuracy of 83.01% on my testing dataset when using epochs of 20. In the data sets used There are:
+
+(1) 133 total dog categories.
+
+(2) 8351 total dog images.
+
+(3) 6680 training dog images.
+
+(4) 835 validation dog images.
+
+(5) 836 test dog images.
+
+(6) 13233 human images.
+
 ## Results
-I was able to get an accuracy of 83.01% on the testing data with the InceptionV3 pre-trained model
+I was able to get an accuracy of 83.01% on the testing data with the InceptionV3 pre-trained model. And when testing with human images, it was able to detect that it's a human image and give the most resembling dog breed.
+It was also successful in producing an error if the provided image is neither a dog's nor a human's.
+
+# Conclusion
+Despite having a high accuracy on the testing data set, the results are worse than expected.
+
+to improve the algorithm, I propose the following improvements:
+
+(1) Increase the dataset size. Currently, we only have around 8,000 images across the training, validation, and testing datasets. This number should increase to a minimum of 50,000 images to be able to capture the variety between different breeds and even the variety inside a breed.
+
+(2) trying a different pre-trained model (Resnet50, Xception, or others)
+
+(3) Hyperparameter tuning
+
+(4) increase the number of training epochs
 
 ## Licensing, Authors, Acknowledgements
 Udacity Data sets: [dog dataset](https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/dogImages.zip). 
