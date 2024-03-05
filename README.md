@@ -45,6 +45,17 @@ The dog_app.ipynb is a notebook that was used to explore the data and train some
 
 The extract_bottleneck_features.py contains some helper functions to extract bottleneck features.
 
+## Running the Web Application
+(1) install all necessary packages.
+
+(2) clone this repository.
+
+(3) Navigate to the repository from the command line.
+
+(4) Run -> python run.py
+
+(5) On your browser, go to http://127.0.0.1:5000
+
 ## Analysis 
 In this project, I built a InceptionV3 model from a pre-trained model. I was able to achieve an accuracy of 83.01% on my testing dataset when using epochs of 20. In the data sets used There are:
 
